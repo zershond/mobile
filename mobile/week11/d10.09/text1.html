@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text1</title>
+	<style type="text/css">
+		.box1{
+			position: fixed;
+			top: 100px;
+			left: 10px;
+		}
+		li::selection{
+			color: black;
+		}
+		p:first-letter{
+			font-size: 40px;
+			float: left;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: url(overexposed.jpg);
+		}
+		.box3{
+			width: 200px;
+			height: 200px;
+			background: transparent;
+		}
+		.box3:hover{
+			background: black;
+			opacity: 0.5;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<ul>
+			<li><a href="#a">a</a></li>
+			<li><a href="#b">b</a></li>
+			<li><a href="#c">c</a></li>
+			<li><a href="#d">d</a></li>
+		</ul>
+	</div>
+	<p>
+		豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。(豫章故郡 一作：南昌故郡)
+	</p>
+	<div class="box2">
+		<div class="box3"></div>
+	</div>
+</body>
+</html>

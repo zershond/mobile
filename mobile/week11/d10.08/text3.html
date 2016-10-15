@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>video</title>
+	<style type="text/css">
+		input{
+			vertical-align: middle;
+		}
+		#schedule{
+			width: 550px;
+		}
+	</style>
+
+	<script src='js/jquery-2.1.1.min.js' type='text/javascript' charset='utf-8'></script>
+	<script type="text/javascript" charset="UTF-8">
+		$(function() {
+			var veo = $('#veo')[0];
+			$('#play').click(function(){
+				if(veo.paused){
+					veo.play();
+					this.value = 'pause';
+				}else{
+					veo.pause();
+					this.value = 'play';
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<video id="veo" width="800" height="" controls="controls" loop="loop" poster="poster.jpg">
+		<source src="3theA.mp4" type="video/mp4"></source>
+		<source src="myvideo.ogv" type="video/ogg"></source>
+		<source src="myvideo.webm" type="video/webm"></source>
+		<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+			<param name="movie" value="myvideo.swf" />
+			<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+		</object>
+		当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+	</video>
+	<br/>
+	<div class="controls">
+		<input type="button" id="play" value="play">
+		<input type="range" id="schedule" min="0" max="100" value="0">
+		<label for="sound"></label><input type="range" id="sound">
+	</div>
+	<br/>
+	<audio src="甜梅号 - 月娘总是照着我们.mp3"  controls="controls"></audio>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>text2</title>
+	<style type="text/css">
+		.container{
+
+		}
+		.item{
+			width: 100%;
+			height: 100px;
+			overflow: hidden;
+			/* background: pink; */
+			display: box;
+			display: -webkit-box;
+			border-radius: 10px;
+			margin-top: 50px;
+		}
+		.row{
+			box-flex: 1;
+			-webkit-box-flex: 1;
+			/* height: 188px; */
+			background: rgb(225,105,122);
+			border-left: 2px solid white;
+		}
+		.row:nth-child(2){
+			display: box;
+			display: -webkit-box;
+			box-orient: vertical;
+			-webkit-box-orient: vertical;
+		}
+		.box{
+			box-flex: 1;
+			-webkit-box-flex: 1;
+			border-bottom: 2px solid white;
+			/* color: white; */
+			text-align: center;
+			/* line-height: 50px; */
+			box-align: center;
+			-webkit-box-align: center;
+			box-pack: center;
+			-webkit-box-pack: center;
+		}
+		.box:nth-child(2){
+			border-bottom: none;
+		}
+		.row:nth-child(3){
+			display: box;
+			display: -webkit-box;
+			box-orient: vertical;
+			-webkit-box-orient: vertical;
+		}
+	</style>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var color = ['#b2d235','#b7ba6b','#4e72b8','#2a5caa','#f8aba6']
+			$('.box').each(function(index, el) {
+				$(this).css({
+					background: color[index%4],
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+		<header></header>
+		<div class="item">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="box">a</div>
+				<div class="box">b</div>
+			</div>
+			<div class="row">
+				<div class="box">c</div>
+				<div class="box">d</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="box">a</div>
+				<div class="box">b</div>
+			</div>
+			<div class="row">
+				<div class="box">c</div>
+				<div class="box">d</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="box">a</div>
+				<div class="box">b</div>
+			</div>
+			<div class="row">
+				<div class="box">c</div>
+				<div class="box">d</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

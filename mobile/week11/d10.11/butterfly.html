@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>butterfly</title>
+	<style type="text/css">
+		.butterfly{
+			width: 200px;
+			height: 200px;
+			background: url(img/001.jpg);
+			background-position: -300px -58px;
+			animation: fly 0.7s infinite;
+			animation-timing-function: step-end;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			-webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgb(0,0,0,0) 50%, rgb(0,0,0,0.7) 100%);
+		}
+		@keyframes fly{
+			0%{
+
+			}
+			25%{
+				background-position: -545px -58px;
+			}
+			50%{
+				background-position: -770px -58px;
+			}
+			75%{
+				background-position: -545px -58px;
+			}
+			100%{
+				background-position: -300px -58px;
+			}
+		}
+	</style>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(document).click(function(event) {
+				/* Act on the event */
+				var butterfly = new CreateButterfly(event.clientX, event.clientY);
+			});
+		})
+		function CreateButterfly(x, y){
+			this.butterfly = document.createElement('div');
+			$(this.butterfly).addClass('butterfly').css({
+				left: x + 'px',
+				top: y + 'px'
+			}).appendTo('body');
+			var butterfly = this.butterfly;
+			this.timer = setInterval(function(){
+				x++; y--;
+				$(butterfly).css({
+					left: x + 'px',
+					top: y + 'px'
+				})
+				var width = document.clientWidth - butterfly.clientWidth;
+				var height = document.clientHeight - butterfly.clientHeight;
+				if(x <= 0 || (width - x) <= 0 || y <= 0 || (height - y) <= 0){
+					$(butterfly).remove();
+				}
+			},10)
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

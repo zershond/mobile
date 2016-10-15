@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.rabbit{
+			width: 32px;
+			height: 35px;
+			background: url(images/兔斯基揉脸.png);
+			background-position: 0 0;
+			animation: rab 0.3s infinite;
+			animation-timing-function: step-end;
+		}
+		@keyframes rab{
+			0%{
+				background-position: 0px 0px;
+			}
+			25%{
+				background-position: 0px -37px;
+			}
+			50%{
+				background-position: 0px -70px;
+			}
+			75%{
+				background-position: 0px -106px;
+			}
+			100%{
+				background-position: 0px -140px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="rabbit"></div>
+</body>
+</html>

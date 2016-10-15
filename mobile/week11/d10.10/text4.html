@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: lightgreen;
+		}
+		.container{
+			width: 450px;
+			/*overflow: hidden;*/
+			margin: 50px auto;
+		}
+		.container img{
+			float: left;
+			transition: all 1s;
+		}
+		.container img:nth-child(1){
+			transform: rotate(50deg) translateX(-50px);
+		}
+		
+		.container img:nth-child(2){
+			transform: rotate(50deg) translateY(-50px);
+		}
+		.container img:nth-child(3){
+			transform: rotate(-50deg) translate(-50px, 100px);
+		}
+		.container img:nth-child(4){
+			transform: rotate(80deg) translate(-50px, 100px);
+		}
+		.container:hover img{
+			transform: rotate(0deg) translate(0px, 0px);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="images/shield_1_01.png" alt="">
+		<img src="images/shield_1_02.png" alt="">
+		<img src="images/shield_1_03.png" alt="">
+		<img src="images/shield_1_04.png" alt="">
+		<img src="images/shield_1_05.png" alt="">
+		<img src="images/shield_1_06.png" alt="">
+		<img src="images/shield_1_07.png" alt="">
+		<img src="images/shield_1_08.png" alt="">
+		<img src="images/shield_1_09.png" alt="">
+	</div>
+</body>
+</html>

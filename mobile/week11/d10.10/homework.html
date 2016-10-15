@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 1250px;
+			height: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.logo{
+			width: 100%;
+			text-align: center;
+			margin-top: 100px;
+		}
+		.text{
+			width: 100%;
+			text-align: center;
+			margin: 100px 0px;
+		}
+		.text img{
+			margin: 0px 20px;
+			opacity: 0.5;
+			transition: all 1s;
+		}
+		/*img:hover{
+			margin: 0;
+		}*/
+		.text .imgActive{
+			
+			margin: 0;
+			opacity: 1;
+		}
+		.info{
+			/*margin-top: 50px;*/
+			width: 100%;
+			text-align: center;
+		}
+
+		.shield{
+			width: 370px;
+			margin-top: 180px;
+			margin-left: 30px;
+			float: left;
+		}
+		.shield img{
+			transition: all 1s;
+		}
+		.shield img:nth-child(1){
+			transform: rotate(50deg) translateY(-50px);
+		}
+		.shield img:nth-child(2){
+			transform: rotate(-50deg) translate(-50px, 100px);
+		}
+		.shield img:nth-child(3){
+			transform: rotate(80deg) translate(-50px, 100px);
+		}
+		#dowebok .shield .imgActive{
+			transform: rotate(0deg) translate(0px, 0px);
+		}
+		.info2{
+			margin-top: 220px;
+			margin-left: 80px;
+			float: left;
+		}
+
+		.info3{
+			margin-top: 280px;
+			margin-left: 40px;
+			float: left;
+		}
+		.rocketCon{
+			float: left;
+			margin-top: 200px;
+			margin-left: 50px;
+			width: 453px;
+			height: 450px;
+			background: url(img/circle.png);
+		}
+		.rocket{
+			width: 203px;
+			height: 204px;
+			/*position: absolute;*/
+			transform: translate(0px,900px);
+			background: url(img/rocket.png);
+			transition: all 1s;
+		}
+		.rocketActive{
+			transform: translate(850px,300px);
+		}
+
+		.search{
+			width: 529px;
+			height: 66px;
+			float: left;
+			margin-top: 275px;
+			background: url(img/search.png);
+			transform: translateX(-550px);
+			transition: all 1s;
+		}
+		.searchActive{
+			transform: translateX(0px);
+		}
+		.search .img{
+			width: 0px;
+			height: 22px;
+			margin-top: 22px;
+			margin-left: 20px;
+			overflow: hidden;
+		}
+		.search .imgActive{
+			transition: all 1s ease-in 1s;
+			width: 100px;
+		}
+		.news{
+			width: 529px;
+			height: 0px;
+			background: url(img/result.png);
+			transform: translateY(10px);
+		}
+		.newsActive{
+			transition: all 1s ease-in 2s;
+			height: 372px;
+		}
+		.info4{
+			float: left;
+			margin-top: 270px;
+			margin-left: 50px;
+		}
+
+		.info5{
+			text-align: center;
+			width: 100%;
+			margin-top: 30px;
+		}
+		.browser{
+			margin: 0 auto;
+			margin-top: 50px;
+			width: 1004px;
+			/*flex: 1;*/
+			height: 600px;
+			background: url(img/toolbar.png) no-repeat;
+			border: 1px solid transparent;
+		}
+		.toolbar{
+			width: 0px;
+			height: 30px;
+			border: 0px solid white;
+			margin-top: 29px;
+			margin-left: 78px;
+		}
+		.toolActive{
+			width: 905px;
+			border: 1px solid white;
+			transition: all 2s;
+		}
+		.extra{
+			width: 394px;
+			height: 29px;
+			background: url(img/extra.png);
+			transform: translate(612px, 510px);
+		}
+		.top{
+			/*position: absolute;*/
+			width: 1004px;
+			height: 1px;
+			background: white;
+			transform: translate(1204px, -90px);
+			/*0*/
+		}
+		.topActive{
+			transform: translate(0px, -90px);
+			transition: all 1s;
+		}
+		.left{
+			/*position: absolute;*/
+			width: 1px;
+			height: 600px;
+			background: white;
+			transform: translate(0px, -900px);
+			/*-90*/
+		}
+		.leftActive{
+			transform: translate(0px, -90px);
+			transition: all 1s;
+		}
+		.right{
+			/*position: absolute;*/
+			width: 1px;
+			height: 600px;
+			background: white;
+			transform: translate(1004px, 0px);
+			/*-691*/
+		}
+		.rightActive{
+			transform: translate(1004px, -691px);
+			transition: all 1s;
+		}
+		.bottom{
+			/*position: absolute;*/
+			width: 1004px;
+			height: 1px;
+			background: white;
+			transform: translate(-1204px, -692px);
+			/*0*/
+		}
+		.bottomActive{
+			transform: translate(-0px, -692px);
+			transition: all 1s;
+		}
+		.extraBottom{
+			/*position: absolute;*/
+			width: 1004px;
+			height: 1px;
+			background: white;
+			transform: translate(1204px, -720px);
+			/*0*/
+		}
+		.extraActive{
+			transform: translate(0px, -720px);
+			transition: all 1s;
+		}
+	</style>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.fullPage.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		$(function (){
+			// body...
+			$('#dowebok').fullpage({
+				sectionsColor: ['rgb(13,165,214)','rgb(42,182,96)','rgb(222,138,16)','rgb(22,187,157)','rgb(13,165,214)'],
+				afterLoad: function(anchorLink, index){
+					$('img', $('.section')).removeClass('imgActive');
+					$('.rocket').removeClass('rocketActive');
+					$('.search').removeClass('searchActive');
+					$('.search .img').removeClass('imgActive');
+					$('.news').removeClass('newsActive');
+					$('.toolbar').removeClass('toolActive');
+					$('.top').removeClass('topActive');
+					$('.left').removeClass('leftActive');
+					$('.right').removeClass('rightActive');
+					$('.bottom').removeClass('bottomActive');
+					$('.extraBottom').removeClass('extraActive');
+					if(index == 1){
+						setTimeout(function(){
+							$('img', $('.text')).addClass('imgActive');
+						},100)
+					}
+					if(index == 2){
+						setTimeout(function(){
+							$('img', $('.shield')).addClass('imgActive');
+						},100)
+					}
+					if(index == 3){
+						setTimeout(function(){console.log('aa');
+							$('.rocket').addClass('rocketActive');
+						},100)
+					}
+					if(index == 4){
+						setTimeout(function(){console.log('aa');
+							$('.search').addClass('searchActive');
+							$('.search .img').addClass('imgActive');
+							$('.news').addClass('newsActive');
+						},100)
+					}
+					if(index == 5){
+						setTimeout(function(){console.log('aa');
+							$('.toolbar').addClass('toolActive');
+							$('.top').addClass('topActive');
+							$('.left').addClass('leftActive');
+							$('.right').addClass('rightActive');
+							$('.bottom').addClass('bottomActive');
+							$('.extraBottom').addClass('extraActive');
+						},100)
+					}
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="dowebok">
+		<div class="section">
+			<div class="container">
+				<div class="logo">
+					<img src="img/logo.png" height="186" width="251" alt="">
+				</div>
+				<div class="text">
+					<img src="img/text_1.png" height="93" width="69" alt="">
+					<img src="img/text_2.png" height="93" width="69" alt="">
+					<img src="img/text_3.png" height="93" width="69" alt="">
+					<img src="img/text_4.png" height="93" width="69" alt="">
+					<img src="img/text_5.png" height="93" width="69" alt="">
+					<img src="img/text_6.png" height="93" width="69" alt="">
+					<img src="img/text_7.png" height="93" width="69" alt="">
+					<img src="img/text_8.png" height="93" width="69" alt="">
+				</div>
+				<div class="info">
+					<img src="img/info_1.png" height="49" width="772" alt="">
+				</div>
+			</div>	
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="shield">
+					<img src="img/shield_1.png" height="150" width="113" alt="">
+					<img src="img/shield_2.png" height="150" width="113" alt="">
+					<img src="img/shield_3.png" height="150" width="113" alt="">
+					<img src="img/shield_4.png" height="150" width="113" alt="">
+					<img src="img/shield_5.png" height="150" width="113" alt="">
+					<img src="img/shield_6.png" height="150" width="113" alt="">
+					<img src="img/shield_7.png" height="150" width="113" alt="">
+					<img src="img/shield_8.png" height="150" width="113" alt="">
+					<img src="img/shield_9.png" height="150" width="113" alt="">
+				</div>
+				<div class="info2">
+					<img src="img/info_2.png" height="309" width="635" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="info3">
+					<img src="img/info_3.png" height="278" width="631" alt="">
+				</div>
+				<div class="rocketCon"></div>
+				<div class="rocket"></div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="search">
+					<div class="img">
+						<img src="img/key.png" height="22" width="99" alt="">
+					</div>
+					<div class="news"></div>
+				</div>
+				<div class="info4">
+					<img src="img/info_4.png" height="299" width="612" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container">
+				<div class="info5">
+					<img src="img/info_5.png" height="134" width="1077" alt="">
+				</div>
+				<div class="browser">
+					<div class="toolbar"></div>
+					<div class="extra"></div>
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="right"></div>
+					<div class="extraBottom"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text5</title>
+	<style type="text/css">
+		.form{
+			border: 1px solid #ccc;
+			padding: 20px;
+		}
+		input{
+			margin: 10px;
+		}
+		.info{
+			width: 100%;
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin-top: 20px;
+
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oSave = document.getElementById('save');
+			var oRead = document.getElementById('read');
+			var oName = document.getElementById('name');
+			var oPwd = document.getElementById('pwd');
+			var oMail = document.getElementById('mail');
+			var oInfo = document.getElementById('info');
+
+			oSave.onclick = function(){
+				var data = {
+					name: oName.value,
+					pwd: oPwd.value,
+					mail: oMail.value
+				};
+				data = JSON.stringify(data);
+				window.localStorage.setItem('data',data);
+			}
+
+			oRead.onclick = function(){
+				var data = window.localStorage.getItem('data');
+				data = JSON.parse(data);
+				console.log(data);
+				for(key in data){
+					var oTr	= document.createElement('tr');
+					var td1 = document.createElement('td');
+					var td2 = document.createElement('td');
+					td1.innerHTML = key;
+					td2.innerHTML = data[key];
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="form">
+		<input id="name" type="text"><label for="name">Name</label><br/>
+		<input id="pwd" type="text"><label for="pwd">Password</label><br/>
+		<input id="mail" type="text"><label for="mail">MailBox</label><br/>
+		<input id="save" type="button" value="Save">
+		<input id="read" type="button" value="Read">
+	</div>
+	<div class="info">
+		<table>
+			
+		</table>
+	</div>
+</body>
+</html>

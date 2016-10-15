@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text</title>
+	<script src='js/jquery-2.1.1.min.js' type='text/javascript' charset='utf-8'></script>
+	<script type="text/javascript" charset="utf-8">
+		$(function(){
+			$('#submit').click(function(){
+				var color = $('#color').val();
+				$('body').css('background',color);
+			})
+		})
+		
+	</script>
+</head>
+<body>
+<!-- 	<header>
+		<video src=""></video>
+		<audio src="甜梅号 - 月娘总是照着我们.mp3" autoplay = "autoplay" controls = "controls"></audio><br/>
+		
+	</header> -->
+	<section></section>
+	<mark>this is a html</mark>
+	<input type="text" id="input" list="car">
+	<datalist  id="car">
+		<option value="11"></option>
+		<option value="22"></option>
+		<option value="33"></option>
+		<option value="44"></option>
+		<option value="55"></option>
+		<option value="66"></option>
+	</datalist>
+	<br/>
+	<form action="" >
+		<!-- <input type="range" name="a" id="a" min="1" max="50">
+		<input type="text" name="b" id="b" value="20">
+		<output id="x"></output> -->
+		<!-- <input type="email" required=true><br/> -->
+		<input type="color" id="color"><br/>
+		<input type="button" id="submit" value="btn"><br/>
+	</form>
+	
+</body>
+</html>

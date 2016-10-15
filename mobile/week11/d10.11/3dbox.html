@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d Box</title>
+	<style type="text/css">
+		.box{
+			width: 150px;
+			margin: 200px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			transform: rotateX(45deg) rotateY(-45deg) rotateZ(45deg);
+			opacity: 1
+		}
+		div{
+			width: 150px;
+			height: 150px;
+			text-align: center;
+			line-height: 150px;
+			font-size: 20px;
+			font-weight: bold;
+			position: absolute;
+			opacity: 0.7;
+		}
+		.front{
+			background-color: pink;
+			transform: rotate(0deg) translateZ(150px);
+		}
+		.after{
+			background-color: blue;
+			transform: rotate(0deg) translateZ(0px);
+		}
+		.left{
+			background-color: yellow;
+			transform: rotateY(-90deg) ;
+			transform-origin: left;
+		}
+		.right{
+			background-color: green;
+			transform: rotateY(90deg) ;
+			transform-origin: right;
+		}
+		.top{
+			background-color: lightblue;
+			transform: rotateX(90deg) ;
+			transform-origin: top;
+		}
+		.bottom{
+			background-color: lightgreen;
+			transform: rotateX(-90deg) ;
+			transform-origin: bottom;
+		}
+	</style>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(document).mousedown(function(event) {
+				/* Act on the event */
+				// var deg = $('.box').css('transform');
+				// console.log(deg);
+				var disX = event.clientX;
+				var disY = event.clientY;
+				$(document).mousemove(function(event) {
+					/* Act on the event */
+					var x = event.clientX - disX;
+					var y = event.clientY - disY;
+					var tra = "rotateX(" + y + "deg) rotateY(" + x + "deg) rotateZ(45deg)"
+					$('.box').css('transform', tra);
+				});
+				$(document).mouseup(function(event) {
+					/* Act on the event */
+					$(document).unbind('mousemove')
+					$(document).unbind('mouseup')
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="front">front</div>
+		<div class="after">after</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+		<div class="top">top</div>
+		<div class="bottom">bottom</div>
+	</div>
+</body>
+</html>

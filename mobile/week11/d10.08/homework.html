@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>music player</title>
+	<link rel="stylesheet" href="js/font-awesome-4.6.3/css/font-awesome.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100%;
+			height: 100%;
+			background: yellow;
+			overflow: hidden;
+			background: url("img/bg.jpg");
+		}
+		.playerContainer{
+			width: 375px;
+			/*height: 1736px;*/
+			/*background: url() -500px 0px no-repeat;*/
+		}
+		header{
+			width: 100%;
+			padding: 10px 0px;
+			font-size: 20px;
+			font-weight: bold;
+			padding-left: 10px;
+			color: white;
+			background: red;
+		}
+		.songsList{
+			font-size: 15px;
+			color: white;
+		}
+		.song{
+			margin: 15px 0px;
+			border-bottom: 1px gray solid;
+			padding: 10px 0px;
+		}
+		.songsList h4{
+			font-weight: bold;
+			padding-left: 10px;
+		}
+		.songsList p{
+			font-size: 15px;
+			padding-left: 25px;
+			color: yellow;
+		}
+		.playControler{
+			position: fixed;
+			bottom: 0px;
+			width: 100%;
+			height: 80px;
+			background: red;
+		}
+		.cover{
+			float: left;
+		}
+		.cover img{
+			width: 80px;
+			height: 80px;
+		}
+		.controler{
+			float: left;
+			width: 250px;
+			height: 60px;
+			margin-left: 15px;
+			position: relative;
+			overflow: hidden;
+		}
+		.controler i{
+			font-size: 40px;
+			color: white;
+		}
+		#pev{
+			position: absolute;
+			top: 19px;
+			left: 30px;
+		}
+		#play{
+			position: absolute;
+			top: 19px;
+			left: 115px;
+		}
+		#next{
+			position: absolute;
+			top: 19px;
+			left: 200px;
+		}
+		.played{
+			background: red;
+		}
+		#schedule{
+			position: fixed;
+			bottom: 70px;
+			width: 100%;
+			z-index: 10;
+		}
+	</style>
+
+	<script src='js/jquery-2.1.1.min.js' type='text/javascript' charset='utf-8'></script>
+	<script type="text/javascript" charset="UTF-8">
+		$(function(){
+			var ado = $('#ado')[0];
+			var thisSong = 0;
+			$('#play').click(function(){
+				if($(this).attr('class') == 'fa fa-play'){
+					$(this).removeClass('fa-play').addClass('fa-pause');
+				}else{
+					$(this).removeClass('fa-pause').addClass('fa-play');
+				}
+
+				if(ado.paused){
+					ado.play();
+				}else{
+					ado.pause();
+				}
+			})
+
+			$('#pev').click(function(){
+				if(thisSong != 0){
+					thisSong -= 1;
+				}else{
+					thisSong = 9;
+				}
+				$('.song').eq(thisSong).trigger('click');
+			})
+			$('#next').click(function(){
+				if(thisSong != 9){
+					thisSong += 1;
+				}else{
+					thisSong = 0;
+				}
+				$('.song').eq(thisSong).trigger('click');
+			})
+
+			$('.song').click(function(){
+				var song = $(this).attr('songName');
+				song = 'songs/' + song;
+				ado.src = song;
+				ado.play();
+				$('.song').removeClass('played');
+				$(this).addClass('played');
+				$('#play').removeClass('fa-play').addClass('fa-pause');
+				thisSong = $(this).index('.song');
+				$('.cover img').attr('src','img/' + $(this).attr('coverSrc'))
+			})
+		})
+		
+		function scheduleBar(){
+			var ado = document.getElememtById('ado')
+			var timer = window.setInterval(function(){
+
+			},1000)
+
+		}
+	</script>
+</head>
+<body>
+	<audio id="ado" src="songs/Maroon 5 - Daylight.mp3" ></audio>
+	<div class="container">
+		<div class="playerContainer">
+			<header>我的音乐</header>
+			<div class="songsList">
+				<div class="song played" songName="Maroon 5 - Daylight.mp3" coverSrc="overexposed.jpg">
+					<h4>Daylight</h4>
+					<p>Maroon 5</p>
+				</div>
+				<div class="song" songName="Maroon 5 - Harder To Breathe.mp3" coverSrc="jane.jpg">
+					<h4>Harder To Breathe</h4>
+					<p>Maroon 5</p>
+				</div>
+				<div class="song" songName="Maroon 5 - She Will Be Loved.mp3" coverSrc="jane.jpg">
+					<h4>She Will Be Loved</h4>
+					<p>Maroon 5</p>
+				</div>
+				<div class="song" songName="甜梅号 - 盗墓者的无底洞.mp3" coverSrc="tian1.jpg">
+					<h4>盗墓者的无底洞</h4>
+					<p>甜梅号</p>
+				</div>
+				<div class="song" songName="甜梅号 - 河畔建筑鼓噪.mp3" coverSrc="tian1.jpg">
+					<h4>河畔建筑鼓噪</h4>
+					<p>甜梅号</p>
+				</div>
+				<div class="song" songName="甜梅号 - 南方蝶道.mp3" coverSrc="tian1.jpg">
+					<h4>南方蝶道</h4>
+					<p>甜梅号</p>
+				</div>
+				<div class="song" songName="甜梅号 - 三分之一摇篮曲.mp3" coverSrc="tian1.jpg">
+					<h4>三分之一摇篮曲</h4>
+					<p>甜梅号</p>
+				</div>
+				<div class="song" songName="甜梅号 - 月娘总是照着我们.mp3" coverSrc="tian2.jpg">
+					<h4>月娘总是照着我们</h4>
+					<p>甜梅号</p>
+				</div>
+				<div class="song" songName="万能青年旅店 - 揪心的玩笑与漫长的白日梦.mp3" coverSrc="wanneng.jpg">
+					<h4>揪心的玩笑与漫长的白日梦</h4>
+					<p>万能青年旅店</p>
+				</div>
+				<div class="song" songName="万能青年旅店 - 杀死那个石家庄人.mp3" coverSrc="wanneng.jpg">
+					<h4>杀死那个石家庄人</h4>
+					<p>万能青年旅店</p>
+				</div>
+			</div>
+			<input type="range" id="schedule" value="0" min="0" max="100">
+			<div class="playControler">
+				<div class="cover">
+					<img src="img/overexposed.jpg" alt="">
+				</div>
+				<div class="controler">
+					<i class="fa fa-step-backward" id="pev"></i>
+					<i class="fa fa-play" id="play"></i>
+					<i class="fa fa-step-forward" id="next"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

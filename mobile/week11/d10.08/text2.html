@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text2</title>
+	<script src='js/jquery-2.1.1.min.js' type='text/javascript' charset='utf-8'></script>
+	<script type="text/javascript" charset="UTF-8">
+		$(function(){
+			changeBg()
+			$('input').on('change',function() {
+				changeBg();
+			})
+		})
+
+		function changeBg(){
+			var bg = "rgba(";
+			bg += $('input').eq(0).val();
+			bg += ',' + $('input').eq(1).val();
+			bg += ',' + $('input').eq(2).val();
+			bg += ',' + $('input').eq(3).val() + ')';
+			console.log(bg);
+			$('body').css('background',bg);
+		}
+	</script>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>改变背景颜色</legend>
+			<input type="range" min="1" max="255" id="r" value="125"><label for="r" id="rlab"></label>
+			<input type="range" min="1" max="255" id="g" value="125"><label for="r" id="glab"></label>
+			<input type="range" min="1" max="255" id="b" value="125"><label for="r" id="blab"></label>
+			<input type="range" min="0" max="1" id="opacity" value="0.5" step="0.1">
+		</fieldset>
+	</form>
+	
+</body>
+</html>

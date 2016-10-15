@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>text4</title>
+
+	<style type="text/css">
+		.container{
+			width: 100%;
+			height: 100%;
+			/* display: box-flex;
+			display: -webkit-box-flex; */
+			-webkit-box-orient: vertical;
+		}
+
+		.input{
+			width: 100%;
+			padding: 10px 0px;
+			text-align: center;
+			margin-top: 20px;
+			/* box-flex: 1;
+			-webkit-box-flex: 1;
+			display: box;
+			display: -webkit-box; */
+		}
+
+		.imgWall{
+			width: 100%;
+			height: 500px;
+			overflow: scroll;
+			overflow-x: hidden;
+			position: relative;
+			border: 3px solid #999;
+			box-sizing: border-box;
+			/* display: box;
+			display: -webkit-box;
+			box-flex: 10;
+			-webkit-box-flex: 10; */
+		}
+		.imgWall>img{
+			position: absolute;
+			border: 2px solid white;
+			border-left: none;
+			box-sizing: border-box;
+		}
+	</style>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-imgWall-zershond.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			//初始化
+			$.fnImgWall({col:3},$('.imgWall'));
+			
+			$('#btn').click(function(event) {
+				/* Act on the event */
+				var obj = {
+					col: $('#col').val()
+				}
+				$.fnImgWall(obj,$('.imgWall'));
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container"></div>
+		<div class="imgWall">
+			<img src="images/11.png"alt="">
+			<img src="images/12.png"alt="">
+			<img src="images/13.png"alt="">
+			<img src="images/14.png"alt="">
+			<img src="images/15.png"alt="">
+			<img src="images/17.png"alt="">
+			<img src="images/18.png"alt="">
+			<img src="images/19.png"alt="">
+			<img src="images/20.png"alt="">
+			<img src="images/apic15055.jpg"alt="">
+			<img src="images/apic15203.jpg"alt="">
+			<img src="images/apic15689.jpg"alt="">
+			<img src="images/apic17350.jpg"alt="">
+			<img src="images/apic17464.jpg"alt="">
+			<img src="images/apic17675.jpg"alt="">
+			<img src="images/apic17955.jpg"alt="">
+			<img src="images/apic17723.jpg"alt="">
+			<img src="images/apic17969.jpg"alt="">
+		</div>
+
+		<div class="input">
+			<input type="text" id="col" value="3">
+			<input type="button" id="btn" value="submit">
+		
+	</div>
+</body>
+</html>

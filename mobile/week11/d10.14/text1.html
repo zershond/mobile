@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>text1</title>
+	<link rel="stylesheet" href="css/comfirmBox.css">
+	<style type="text/css">
+		
+	</style>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/comfirm.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			$.comfirmBox({
+				header: 'warning',
+				tag: 'default',
+				buttons:[
+				{
+					content:'comfirm',
+					event:function(data){
+						$('.comfirmBox').remove();
+						console.log(data.html());
+					}
+				},
+				{
+					content:'quit',
+					event:function(data){
+						$('.comfirmBox').remove();
+						console.log(data.html());
+					}
+				}
+				]
+			});
+		}
+	</script>
+</head>
+<body>
+	<!-- <div class="comfirmBox"><header>温馨提示</header><div class="tag">保存成功</div>
+		<div class="btn">
+			<span class="option">确定</span>
+			<span class="option">确定</span>
+		</div>
+	</div> -->
+</body>
+</html>

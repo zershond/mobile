@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text6</title>
+	<style type="text/css">
+		.p3d{
+			width: 300px;
+			margin: 100px auto;
+			/* overflow: hidden; */
+			transform-style: preserve-3d;
+		}
+		.rotatex:first-child{
+			width: 250px;
+			height: 400px;
+			background-color: #ccc;
+			position: absolute;
+			opacity: 0.7;
+			/* animation-timing-function: ; */
+		}
+		.rotatex:last-child{
+			position: absolute;
+			opacity: 0.7;
+			width: 250px;
+			height: 400px;
+			background-color: blue;
+			transform: rotateX(45deg) skewX(-45deg);
+			/*  */
+		}
+	</style>
+</head>
+<body>
+	<div class="p3d">
+		<div class="rotatex"></div>
+		<div class="rotatex"></div>
+	</div>
+</body>
+</html>

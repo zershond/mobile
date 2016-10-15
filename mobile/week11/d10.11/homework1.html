@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework1</title>
+	<style type="text/css">
+		body{
+			background: url(img/bg.jpg);
+		}
+		.container{
+			width: 800px;
+			height: 650px;
+			margin: 100px auto;
+			/* background: white; */
+			position: relative;
+		}
+		.center{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.sun{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: rgb(204,153,0);
+			box-shadow: 0 0 20px rgb(204,153,0);
+		}
+
+		/* 水星 */
+		.mercury{
+			width: 130px;
+			height: 130px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80);
+			transform: translate(-50%,-50%) rotateZ(0deg);
+			animation: circle 10s linear infinite;
+		}
+		.mercury::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: rgb(255,255,0);
+			transform: translate(15px, 7px);
+		}
+		
+		
+		/* 金星 */
+		.venus{
+			width: 185px;
+			height: 185px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80); 
+			transform: translate(-50%,-50%) rotateZ(0deg);
+			animation: circle 15s linear infinite;
+		}
+		.venus::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: rgb(0,3,252);
+			transform: translate(17px, 20px);
+		}
+
+		/* 地球 */
+		.earth{
+			width: 245px;
+			height: 245px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80); 
+			transform: translate(-50%,-50%) rotateZ(0deg);
+			animation: circle 20s linear infinite;
+		}
+		.moon{
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: rgb(7,127,3);
+			transform: translate(15px, 40px) rotate(0deg);
+			animation: _circle 10s linear infinite;
+		}
+		.moon::after{
+			content: "";
+			display: block;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: rgb(255,255,30);
+			transform: translate(15px, 15px);
+		}
+
+		/* 火星 */
+		.mars{
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80); 
+			transform: translate(-50%,-50%) rotateZ(5deg);
+			animation: circle 25s linear infinite;
+			background-image: url(img/asteroids_meteorids.png);
+			background-size: 300px 300px;
+		}
+		.mars::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: rgb(255,0,0);
+			transform: translate(20px, 55px);
+		}
+
+		/* 木星 */
+		.jupiter{
+			width: 365px;
+			height: 350px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80);
+			transform: translate(-50%,-50%) rotateZ(5deg);
+			animation: circle 30s linear infinite;
+		}
+		.jupiter::after{
+			content: "";
+			display: block;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: rgb(205,205,205);
+			transform: translate(20px, 70px);
+		}
+		
+		/* 土星 */
+		.saturn{
+			width: 420px;
+			height: 420px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80);
+			transform: translate(-50%,-50%) rotateZ(5deg);
+			animation: circle 35s linear infinite;
+		}
+		.saturn::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: rgb(3,120,3);
+			transform: translate(50px, 55px);
+		}
+
+		/* 天王星 */
+		.uranus{
+			width: 480px;
+			height: 480px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80);
+			transform: translate(-50%,-50%) rotateZ(5deg);
+			animation: circle 40s linear infinite;
+		}
+		.uranus::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: rgb(255,200,200);
+			transform: translate(67px, 55px);
+		}
+
+		/* 海王星 */
+		.neptune{
+			width: 545px;
+			height: 545px;
+			border-radius: 50%;
+			border: 2px solid rgb(60,60,80);
+			transform: translate(-50%,-50%) rotateZ(5deg);
+			animation: circle 45s linear infinite;
+		}
+		.neptune::after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: rgb(2,3,254);
+			transform: translate(90px, 55px);
+		}
+
+		@keyframes circle{
+			from{
+
+			}
+			to{
+				transform: translate(-50%,-50%) rotateZ(360deg)
+			}
+		}
+		@keyframes _circle{
+			from{
+
+			}
+			to{
+				transform: translate(15px, 40px) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="sun center"></div>
+		<div class="mercury center"></div>
+		<div class="venus center"></div>
+		<div class="earth center">
+			<div class="moon"></div>
+		</div>
+		<div class="mars center"></div>
+		<div class="jupiter center"></div>
+		<div class="saturn center"></div>
+		<div class="uranus center"></div>
+		<div class="neptune center"></div>
+	</div>
+</body>
+</html>

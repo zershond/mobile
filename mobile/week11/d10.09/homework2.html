@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework2</title>
+	<style type="text/css">
+		.container{
+			width: 500px;
+			height: 500px;
+			margin: 0 auto;
+			position: relative;
+		}
+		header{
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 200px;
+			height: 100px;
+			background: yellowgreen;
+			border-radius: 90px 90px 0px 0px;
+		}
+		header:before{
+			content: "";
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 55px;
+			left: 50px;
+			border-radius: 50%;
+			background: white;
+			z-index: 10;
+		}
+		header:after{
+			content: "";
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 55px;
+			left: 135px;
+			border-radius: 50%;
+			background: white;
+			z-index: 10;
+		}
+		.leftEye{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 55px;
+			left: 55px;
+			border-radius: 50%;
+			background: white;
+			z-index: 10;
+		}
+		.rightEye{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 55px;
+			left: 145px;
+			border-radius: 50%;
+			background: white;
+			z-index: 10;
+		}
+		.body{
+			width: 200px;
+			height: 180px;
+			position: absolute;
+			top: 120px;
+			left: 10px;
+			background: yellowgreen;
+			border-radius: 0px 0px 10px 10px;
+		}
+		.leftHand{
+			width: 50px;
+			height: 150px;
+			position: absolute;
+			left: -55px;
+			top: 120px;
+			background: yellowgreen;
+			border-radius: 50px;
+		}
+		.rightHand{
+			width: 50px;
+			height: 150px;
+			position: absolute;
+			left: 225px;
+			top: 120px;
+			background: yellowgreen;
+			border-radius: 50px;
+		}
+		.leftFoot{
+			width: 50px;
+			height: 100px;
+			position: absolute;
+			left: 40px;
+			top: 270px;
+			background: yellowgreen;
+			border-radius: 50px;
+		}
+		.rightFoot{
+			width: 50px;
+			height: 100px;
+			position: absolute;
+			left: 130px;
+			top: 270px;
+			background: yellowgreen;
+			border-radius: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			
+		</header>
+		<!-- <div class="leftEye"></div>
+		<div class="rightEye"></div> -->
+		<div class="body"></div>
+		<div class="leftHand"></div>
+		<div class="rightHand"></div>
+		<div class="leftFoot"></div>
+		<div class="rightFoot"></div>
+	</div>
+</body>
+</html>

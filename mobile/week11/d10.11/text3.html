@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	.box3{
+			width: 500px;
+			height: 40px;
+			background: green;
+			background-image: -webkit-linear-gradient(46deg, yellow 25%, transparent 25%, transparent 50%, yellow 50%, yellow 75%, transparent 75%);
+			background-size: 40px 40px;
+			/*background-repeat: repeat-y;*/
+			background-position: 0 0;
+			animation: load 10s infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes load{
+			from{
+
+			}
+			to{
+				background-position: 360px 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box3"></div>
+</body>
+</html>

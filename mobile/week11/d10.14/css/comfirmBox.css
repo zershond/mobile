@@ -1,0 +1,62 @@
+ 		body{
+			font-family: "微软雅黑";
+		}
+		.comfirmBox{
+			width: 250px;
+			height: 120px;
+			border-radius: 20px;
+			background-color: white;
+			text-align: center;
+			overflow: hidden;
+			position: absolute;
+			top: 35%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			/*box-orient : vertical;
+			-webkit-box-orient: vertical; */
+			border: 1px solid #ccc;
+			z-index: 100;
+		}
+		.comfirmBox header{
+			/* display: box;
+			display: -webkit-box;
+			box-flex: 1;
+			-webkit-box-flex: 1; */
+			/* padding: 10px 0;
+			padding-top: 15px; */
+			height: 50px;
+			line-height: 50px;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		.comfirmBox .tag{
+			/* display: box;
+			display: -webkit-box;
+			box-flex: 1;
+			-webkit-box-flex: 1; */
+			height: 30px;
+			font-size: 14px;
+		}
+		.comfirmBox .btn{
+			/* display: box;
+			display: -webkit-box;
+			box-flex: 1;
+			-webkit-box-flex: 1; */
+			width: 100%;
+			/* margin-top: 10px; */
+			border-top: solid 1px #ccc;
+			overflow: hidden;
+		}
+.comfirmBox .option{
+	display: block;
+	margin: 0 auto;
+	/* width: 50%; */
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	box-sizing: border-box;
+}
+.comfirmBox .option:not(:nth-child(1)){
+	border-left: 1px solid #ccc;
+}

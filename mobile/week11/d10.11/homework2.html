@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework2</title>
+	<style type="text/css">
+		body{
+			background: black;
+		}
+		.container{
+			width: 133px;
+			height: 200px;
+			position: relative;
+			margin: 400px;
+			margin-left: 550px; 
+			transform: rotateX(-30deg) rotateY(0deg);
+			transform-style: preserve-3d;
+			transform-origin: center center;
+			border: 1px solid green;
+		}
+		.imgbox{
+			position: absolute;
+			transform-origin: center;
+			z-index: 10;
+			-webkit-box-reflect: below 10px -webkit-linear-gradient(top,rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+		}
+		.imgbox:nth-child(1){
+			/* transform: rotateY(0deg) translateZ(-100px); */
+			transform: rotateY(0deg) translateZ(260px);
+		}
+		.imgbox:nth-child(2){
+			/* transform: rotateY(-32deg) translateX(75px)  translateZ(-160px); */
+			transform: rotateY(-32deg) translateZ(260px);
+		}
+		.imgbox:nth-child(3){
+			/* transform: rotateY(-64deg) translateX(100px) translateZ(-250px); */
+			transform: rotateY(-64deg) translateZ(260px);
+		}
+		.imgbox:nth-child(4){
+			/* transform: rotateY(-96deg) translateX(80px) translateZ(-340px); */
+			transform: rotateY(-96deg) translateZ(260px);
+		}
+		.imgbox:nth-child(5){
+			/* transform: rotateY(-128deg) translateX(15px) translateZ(-403px); */
+			transform: rotateY(-128deg) translateZ(260px);
+		}
+		.imgbox:nth-child(6){
+			/* transform: rotateY(-160deg) translateX(-75px) translateZ(-425px); */
+			transform: rotateY(-160deg) translateZ(260px);
+		}
+		.imgbox:nth-child(7){
+			/* transform: rotateY(-192deg) translateX(-160px) translateZ(-395px); */
+			transform: rotateY(-192deg) translateZ(260px);
+		}
+		.imgbox:nth-child(8){
+			/* transform: rotateY(-224deg) translateX(-220px) translateZ(-320px); */
+			transform: rotateY(-224deg) translateZ(260px);
+		}
+		.imgbox:nth-child(9){
+			/* transform: rotateY(-256deg) translateX(-235px) translateZ(-225px); */
+			transform: rotateY(-256deg) translateZ(260px);
+		}
+		.imgbox:nth-child(10){
+			/* transform: rotateY(-288deg) translateX(-190px) translateZ(-140px); */
+			transform: rotateY(-288deg) translateZ(260px);
+		}
+		.imgbox:nth-child(11){
+			/* transform: rotateY(-320deg) translateX(-95px) translateZ(-90px); */
+			transform: rotateY(-320deg) translateZ(260px);
+		}
+	</style>
+
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $(document).mousedown(function(event) {
+			// 	/* Act on the event */
+			// 	// var deg = $('.box').css('transform');
+			// 	// console.log(deg);
+			// 	var disX = event.clientX;
+			// 	var disY = event.clientY;
+			// 	$(document).mousemove(function(event) {
+			// 		/* Act on the event */
+			// 		var x = event.clientX - disX;
+			// 		var y = event.clientY - disY;
+			// 		var tra = "rotateX(45deg) rotateY(" + x + "deg)"
+			// 		$('.container').css('transform', tra);
+			// 	});
+			// 	$(document).mouseup(function(event) {
+			// 		/* Act on the event */
+			// 		$(document).unbind('mousemove')
+			// 		$(document).unbind('mouseup')
+			// 	});
+			// });
+		})
+
+		 window.onload = function () {
+            var stepX = null;
+            var stepY = null;
+            var rotX = null;
+            var rotY = null;
+
+            document.onmousedown = function (e) {
+                var mouX = e.clientX;
+                var mouY = e.clientY;
+                document.onmousemove = function (e) {
+                    var mouseX = e.clientX;
+                    var mouseY = e.clientY;
+                    stepX = mouseX - mouX;
+                    stepY = mouseY - mouY;
+                    rotX -= stepY * 0.2;
+                    rotY += stepX * 0.1;
+                    var str = "perspective(800px) rotateX(-30deg) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)"
+                    document.getElementById('solarSystem').style.transform = str;
+                    mouX = mouseX;
+                    mouY = mouseY;
+                }
+            }
+
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+
+            document.ondragstart = function () {
+                return false;
+            }
+                
+        }
+	</script>
+</head>
+<body>
+	<div id="solarSystem" class="container">
+		<div class="imgbox"><img src="img/1.jpg" height="200" width="133" alt=""></div>
+ 		<div class="imgbox"><img src="img/2.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/3.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/4.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/5.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/6.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/7.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/8.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/9.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/10.jpg" height="200" width="133" alt=""></div>
+		<div class="imgbox"><img src="img/11.jpg" height="200" width="133" alt=""></div> 
+	</div>
+</body>
+</html>

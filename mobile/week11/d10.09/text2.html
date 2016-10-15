@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		@font-face{
+			font-family: myFont;
+			src: url("fonts/Fontin_Sans_BI_45b.otf");
+		}
+		body{
+			font-family: myFont;
+		}
+		p{
+			text-shadow: 0px 30px 0px orange, 0px 60px 0px yellow, 0px 90px 0px red;
+		}
+		.wordBreak{
+			margin-top: 200px;
+			width: 100px;
+			border: 1px solid #ccc;
+			word-wrap: break-word;
+		}
+		.nowrap{
+			width: 100px;
+			border: 1px solid #ccc;
+			white-space: nowrap;
+		}
+		.box1{
+			width: 1000px;
+			height: 200px;
+			background: -webkit-linear-gradient(right, #ccc, #000);
+		}
+		.box2{
+			width: 500px;
+			height: 250px;
+			background-image: -webkit-linear-gradient(90deg, red 25%,yellow 25%, yellow 50%, green 50%, green 75%,blue 75%)
+		}
+		.box3{
+			width: 500px;
+			height: 40px;
+			background: green;
+			background-image: -webkit-linear-gradient(46deg, yellow 25%, transparent 25%, transparent 50%, yellow 50%, yellow 75%, transparent 75%);
+			background-size: 40px 40px;
+			/*background-repeat: repeat-y;*/
+		}
+		.box4{
+			width: 500px;
+			height: 500px;
+			background: -webkit-radial-gradient(50% 50%,circle,blue, yellow, green );
+			border-radius: 50%;
+		}
+		.box5{
+			width: 200px;
+			height: 200px;
+			background: url(bg.jpg);
+			color: white;
+			font-size: 45px;
+			-webkit-background-clip: text;
+			border: 10px dashed #ccc;
+			-webkit-text-fill-color:transparent;
+			font-weight:bold;
+			/*font-size:120px;*/
+		}
+		.box6{
+			width: 200px;
+			height: 200px;
+			border-image-source: url(tian1.jpg) ;
+			border-image-width: 20px;
+		}
+		.tag{
+			width: 200px;
+			height: 100px;
+			position: relative;
+			border: 5px solid blue;
+		}
+		.tag em{
+			border: 10px solid transparent;
+			border-bottom: 10px white solid;
+			position: absolute;
+			top: -20px;
+			left: 90px; 
+			z-index: 10;
+		}
+		.tag span{
+			display: block;
+			position: absolute;
+			top: -32px;
+			left: 85px;
+			border: 15px solid transparent;
+			border-bottom: 15px blue solid;
+		}
+	</style>
+</head>
+<body>
+	<p>You are my sunshine.</p>
+	<div class="wordBreak">
+		i am very looooooooooooooooooooooooooooooooooooooooooong word.
+	</div>
+	<div class="nowrap">
+		look up the start, look how they shine for you.
+	</div>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<br/>
+	<div class="box3"></div>
+	<br/	>		
+	<div class="box4"></div>
+	<br/>
+	<div class="box5">
+		you know i love you so.
+	</div>
+	<br/>
+	<div class="box6">
+		<!-- <img src="wanneng.jpg" height="199" width="198" alt=""> -->
+	</div>
+	<br/>
+	<div class="tag">
+		<em></em>
+		<span></span>
+	</div>
+</body>
+</html>
